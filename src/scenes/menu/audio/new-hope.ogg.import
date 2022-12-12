@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/new-hope.ogg-263f21f71f4778cda1e998d4d64bc1ae.oggstr"
+
+[deps]
+
+source_file="res://src/scenes/menu/audio/new-hope.ogg"
+dest_files=[ "res://.import/new-hope.ogg-263f21f71f4778cda1e998d4d64bc1ae.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
