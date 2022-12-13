@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/scenes/level/assets/background.png" type="Texture" id=1]
+[ext_resource path="res://src/scenes/level/level.gd" type="Script" id=2]
+
+[node name="Level" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="BackgroundContainer" type="ParallaxBackground" parent="."]
+
+[node name="BgLayer" type="ParallaxLayer" parent="BackgroundContainer"]
+motion_mirroring = Vector2( 0, 256 )
+
+[node name="Sprite" type="Sprite" parent="BackgroundContainer/BgLayer"]
+position = Vector2( -35, 0 )
+scale = Vector2( 0.800781, 0.800781 )
+texture = ExtResource( 1 )
+centered = false

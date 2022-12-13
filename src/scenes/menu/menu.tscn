@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://src/fonts/nokia-cellphone-fc.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://src/scenes/menu/assets/background.png" type="Texture" id=2]
 [ext_resource path="res://src/scenes/menu/audio/new-hope.ogg" type="AudioStream" id=3]
 [ext_resource path="res://src/fonts/normal-style-font.tres" type="DynamicFont" id=4]
+[ext_resource path="res://src/scenes/menu/menu.gd" type="Script" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 outline_size = 2
@@ -18,8 +19,8 @@ extra_spacing_char = 8
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=3]
-size = 8
-outline_size = 2
+size = 5
+outline_size = 1
 outline_color = Color( 0.133333, 0.133333, 0.133333, 1 )
 font_data = ExtResource( 1 )
 
@@ -27,6 +28,7 @@ font_data = ExtResource( 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_clip_content = true
+script = ExtResource( 5 )
 
 [node name="BgMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
@@ -95,10 +97,12 @@ anchor_bottom = 1.0
 margin_top = -25.0
 
 [node name="Author" type="Label" parent="Footer"]
-margin_top = 7.0
+margin_top = 9.0
 margin_right = 144.0
-margin_bottom = 17.0
+margin_bottom = 16.0
 custom_fonts/font = SubResource( 3 )
 text = "by @munozrc"
 align = 1
 valign = 1
+
+[connection signal="pressed" from="Container/Start" to="." method="_on_Start_pressed"]
