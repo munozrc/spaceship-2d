@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://src/scenes/level/assets/background.png" type="Texture" id=1]
 [ext_resource path="res://src/scenes/level/level.gd" type="Script" id=2]
+[ext_resource path="res://src/entities/player/player.tscn" type="PackedScene" id=3]
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 2 )
 
 [node name="BackgroundContainer" type="ParallaxBackground" parent="."]
+scroll_ignore_camera_zoom = true
 
 [node name="BgLayer" type="ParallaxLayer" parent="BackgroundContainer"]
 motion_mirroring = Vector2( 0, 256 )
@@ -16,3 +18,6 @@ position = Vector2( -35, 0 )
 scale = Vector2( 0.800781, 0.800781 )
 texture = ExtResource( 1 )
 centered = false
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 70, 209 )

@@ -1,4 +1,6 @@
 extends Node2D
 
-func _physics_process(delta):
-	get_node("BackgroundContainer").scroll_offset += Vector2(0, 1) * 100 * delta
+var camera_velocity: Vector2 = Vector2( 0, 30 );
+
+func _process(delta):
+	get_node("BackgroundContainer").scroll_offset += camera_velocity * delta
